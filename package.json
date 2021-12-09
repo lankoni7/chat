@@ -1,0 +1,45 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lankoni7/chat.git"
+  },
+  "keywords": [],
+  "author": "Shahin Mirzayi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lankoni7/chat/issues"
+  },
+  "homepage": "https://github.com/lankoni7/chat#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "handlebars": "^4.7.7",
+    "handlebars-loader": "^1.7.1",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "ws": "^8.3.0"
+  }
+}

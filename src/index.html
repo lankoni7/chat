@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="modal hidden">
+      <div class="modal__container">
+        <div class="logo">
+          <img src="./img/modal.svg" class="logo__img" alt="app logo" />
+        </div>
+        <h3 class="modal__title">Авторизация</h3>
+        <p class="modal__txt">
+          Введите пожалуйста свой ник для дальнейшей авторизации
+        </p>
+        <form action="" class="modal__form">
+          <input
+            type="text"
+            class="modal__input"
+            placeholder="Введите ваш ник"
+          />
+          <button type="submit" class="button">Войти</button>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div class="left-bar">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="user-list"></div>
+      </div>
+      <div class="chat">
+        <div class="chat__head">
+          <h4 class="chat__title">Чаты</h4>
+          <span class="chat__counter">0 участников</span>
+        </div>
+        <div class="chat__body"></div>
+
+        <form name="chat" class="chat__form">
+          <input
+            type="text"
+            name="message"
+            class="chat__input"
+            placeholder="Введите сообщение..."
+            autofocus
+          />
+          <button class="button">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

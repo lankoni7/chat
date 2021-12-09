@@ -1,0 +1,165 @@
+@import "~normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  font-weight: 300;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #232f3d;
+  position: relative;
+  margin-bottom: 30px;
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.modal {
+  display: block;
+  width: 450px;
+  height: 500px;
+  background-color: #17212b;
+  color: #fff;
+  font-size: 16px;
+  &__container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  &__txt {
+    font-weight: 400;
+    color: #858f98;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__input {
+    border-bottom: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    &::placeholder {
+      color: #858f98;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+.button {
+  background-color: #5188c1;
+  // padding: 12px 40px;
+  width: 120px;
+  height: 30px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+}
+
+.left-bar {
+  width: 33%;
+  height: 100%;
+  background-color: #17212b;
+}
+
+.hamburger {
+  padding: 30px;
+  width: 33px;
+}
+
+.hamburger span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+}
+.chat {
+  height: 100%;
+  width: 100%;
+  border-left: 1px solid #0e1621;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__title {
+    font-weight: 300;
+  }
+  &__counter {
+    font-size: 12px;
+    font-weight: 300;
+    color: #7f91a4;
+  }
+
+  &__head {
+    background: #17212b;
+    height: 55px;
+    padding: 15px;
+  }
+
+  &__body {
+    background: #0e1621;
+    height: 100%;
+  }
+  &__form {
+    background: #17212b;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+}
+.hidden {
+  display: none;
+}
