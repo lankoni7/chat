@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="modal hidden">
+    <div class="modal" id="modal">
       <div class="modal__container">
         <div class="logo">
           <img src="./img/modal.svg" class="logo__img" alt="app logo" />
@@ -15,24 +15,37 @@
         <p class="modal__txt">
           Введите пожалуйста свой ник для дальнейшей авторизации
         </p>
-        <form action="" class="modal__form">
+        <form name="login" class="modal__form">
           <input
+            name="nick"
             type="text"
             class="modal__input"
             placeholder="Введите ваш ник"
           />
           <button type="submit" class="button">Войти</button>
         </form>
+        <div class="modal__error"></div>
       </div>
     </div>
-    <div class="container">
+    <div class="modal-avatar hidden" id="modal-avatar">
+      <h3 class="modal-avatar__title">Загрузка фото</h3>
+      <div class="modal-avatar__choose">
+        <input class="modal-avatar__input" type="file" id="load-avatar" />
+        <label for="load-avatar" class="modal-avatar__label" id="image-wrap">
+          <div class="user-img user-img_big"></div>
+        </label>
+        <span class="modal-avatar__name" id="user-name">Name</span>
+      </div>
+      <a href="#" class="modal-avatar__close" id="close"></a>
+    </div>
+    <div class="main hidden" id="main">
       <div class="left-bar">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="user-list"></div>
+        <ul class="user-list" id="user-list"></ul>
       </div>
       <div class="chat">
         <div class="chat__head">
@@ -48,8 +61,9 @@
             class="chat__input"
             placeholder="Введите сообщение..."
             autofocus
+            autocomplete="off"
           />
-          <button class="button">Отправить</button>
+          <button id="btn" class="button">Отправить</button>
         </form>
       </div>
     </div>

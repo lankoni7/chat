@@ -13,6 +13,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-size: 14px;
   color: #fff;
+  position: relative;
 }
 h1,
 h2,
@@ -21,6 +22,15 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
 }
 input {
   width: 100%;
@@ -46,6 +56,10 @@ input {
   }
 }
 .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: block;
   width: 450px;
   height: 500px;
@@ -85,11 +99,69 @@ input {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 15px;
   }
 }
+
+.modal-avatar {
+  background-color: #17212b;
+  width: 350px;
+  height: 200px;
+  padding: 30px 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  &__choose {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+  }
+  &__input {
+    display: none;
+  }
+  &__label {
+    cursor: pointer;
+  }
+
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    transition: opacity ease-in-out 0.3s;
+  }
+  &__close:hover {
+    opacity: 1;
+  }
+  &__close:before,
+  &__close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 20px;
+    width: 2px;
+    background-color: #747e87;
+  }
+  &__close:before {
+    transform: rotate(45deg);
+  }
+  &__close:after {
+    transform: rotate(-45deg);
+  }
+}
+
 .button {
   background-color: #5188c1;
-  // padding: 12px 40px;
   width: 120px;
   height: 30px;
   border: none;
@@ -97,7 +169,7 @@ input {
   border-radius: 5px;
 }
 
-.container {
+.main {
   height: 100%;
   display: flex;
 }
@@ -106,24 +178,32 @@ input {
   width: 33%;
   height: 100%;
   background-color: #17212b;
+  padding: 0 5px;
+  overflow: scroll;
 }
 
 .hamburger {
-  padding: 30px;
-  width: 33px;
+  margin: 20px 15px;
+  width: 20px;
+  cursor: pointer;
 }
 
-.hamburger span {
+.hamburger div {
   display: block;
-  width: 33px;
-  height: 4px;
+  width: 20px;
+  height: 2px;
   margin-bottom: 5px;
   position: relative;
 
-  background: #cdcdcd;
+  background: #747e87;
+  opacity: 0.3;
   border-radius: 3px;
+  z-index: 10;
+  transition: opacity ease-in-out 0.3s;
+}
 
-  z-index: 1;
+.hamburger:hover div {
+  opacity: 1;
 }
 .chat {
   height: 100%;
@@ -150,6 +230,8 @@ input {
   &__body {
     background: #0e1621;
     height: 100%;
+    padding: 40px 10px 0 10px;
+    overflow: scroll;
   }
   &__form {
     background: #17212b;
@@ -160,6 +242,87 @@ input {
     padding: 0 10px;
   }
 }
+
+.user-info {
+  display: flex;
+  column-gap: 10px;
+}
+
+.message {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 5px;
+
+  &-item {
+    position: relative;
+    display: flex;
+    column-gap: 10px;
+    padding: 5px 5px 5px 20px;
+    border-radius: 5px;
+    font-weight: 300;
+    align-items: center;
+    min-width: 150px;
+    max-width: 350px;
+    overflow-wrap: anywhere;
+    background-color: #182633;
+    justify-content: space-between;
+  }
+
+  &-time {
+    align-self: flex-end;
+    flex-shrink: 0;
+    color: #7f91a4;
+  }
+}
+
+.message_not-first .user-img {
+  visibility: hidden;
+}
+
+.message_not-first .user-name {
+  visibility: hidden;
+}
+.message_not-mine {
+  flex-direction: row-reverse;
+}
+.message_not-mine .message-item {
+  background-color: #2b5279;
+}
+.message-system {
+  margin: 20px;
+  color: #6c737a;
+  text-align: center;
+}
+.user {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+.user-name {
+  color: #5387c1;
+  font-size: 12px;
+  font-weight: 500;
+
+  &_absolute {
+    position: absolute;
+    top: -23px;
+    left: 10px;
+  }
+}
+
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #232f3d url("./img/no-photo.svg") center center no-repeat;
+  background-size: initial;
+  overflow: hidden;
+}
+.user-img_big {
+  width: 56px;
+  height: 56px;
+}
+
 .hidden {
   display: none;
 }

@@ -1,0 +1,14 @@
+<div class="message">
+   {{#if src}}
+        <div class="user-img" style="background-image: url({{src}}); background-size: cover">
+     {{else}}
+        <div class="user-img">
+     {{/if}}
+  </div>
+  <div class="message-item">
+    <span class="user-name user-name_absolute">{{name}}</span>
+    <span class="message-text">{{text}}</span>
+    <span class="message-time">{{time}}</span>
+  </div>
+</div>
+

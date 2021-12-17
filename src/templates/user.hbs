@@ -1,0 +1,12 @@
+ <li class="user">
+     {{#if src}}
+        <div class="user-img user-img_big" style="background-image: url({{src}}); background-size: cover">
+     {{else}}
+        <div class="user-img user-img_big">
+     {{/if}}
+  </div>
+  <div class="right-side">
+    <div class="user-name">{{name}}</div>
+    <span class="message-text">{{text}}</span>
+  </div>
+</li>
